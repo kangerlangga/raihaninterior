@@ -24,16 +24,16 @@
                 <div class="col-lg-4">
                     <div class="nav nav-pills d-flex justify-content-between w-100 h-100 me-4">
                         <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active" data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
-                            <h3 class="m-0">01. Jasa Interior</h3>
+                            <h3 class="m-0">01. Interior Design Services</h3>
                         </button>
                         <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
-                            <h3 class="m-0">02. Produksi Sofa</h3>
+                            <h3 class="m-0">02. Sofa Production</h3>
                         </button>
                         <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
-                            <h3 class="m-0">03. Meubel / Furniture</h3>
+                            <h3 class="m-0">03. Furniture & Cabinetry</h3>
                         </button>
                         <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-0" data-bs-toggle="pill" data-bs-target="#tab-pane-4" type="button">
-                            <h3 class="m-0">04. Kontraktor Rumah</h3>
+                            <h3 class="m-0">04. Home Contracting</h3>
                         </button>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/project-1.jpg" style="object-fit: cover;" alt="">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/Project/1.jpg" style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -52,7 +52,6 @@
                                     <p><i class="fa fa-check text-primary me-3"></i>Customized Design Solutions</p>
                                     <p><i class="fa fa-check text-primary me-3"></i>Quality Craftsmanship</p>
                                     <p><i class="fa fa-check text-primary me-3"></i>Timely Project Completion</p>
-                                    {{-- <a href="{{ route('project.publik') }}" class="btn btn-primary py-3 px-5 mt-3">Read More</a> --}}
                                 </div>
                             </div>
                         </div>
@@ -60,7 +59,7 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/project-2.jpg" style="object-fit: cover;" alt="">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/Project/4.jpg" style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -69,7 +68,6 @@
                                     <p><i class="fa fa-check text-primary me-3"></i>Premium Materials</p>
                                     <p><i class="fa fa-check text-primary me-3"></i>Innovative Designs</p>
                                     <p><i class="fa fa-check text-primary me-3"></i>Durable Construction</p>
-                                    {{-- <a href="{{ route('project.publik') }}" class="btn btn-primary py-3 px-5 mt-3">Read More</a> --}}
                                 </div>
                             </div>
                         </div>
@@ -77,7 +75,7 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/project-3.jpg" style="object-fit: cover;" alt="">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/Project/3.jpg" style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -86,7 +84,6 @@
                                     <p><i class="fa fa-check text-primary me-3"></i>Custom Furniture Design</p>
                                     <p><i class="fa fa-check text-primary me-3"></i>Sustainable Practices</p>
                                     <p><i class="fa fa-check text-primary me-3"></i>Attention to Detail</p>
-                                    {{-- <a href="{{ route('project.publik') }}" class="btn btn-primary py-3 px-5 mt-3">Read More</a> --}}
                                 </div>
                             </div>
                         </div>
@@ -94,7 +91,7 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/project-4.jpg" style="object-fit: cover;" alt="">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/Project/2.jpg" style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -103,7 +100,6 @@
                                     <p><i class="fa fa-check text-primary me-3"></i>End-to-End Service</p>
                                     <p><i class="fa fa-check text-primary me-3"></i>Licensed and Insured</p>
                                     <p><i class="fa fa-check text-primary me-3"></i>Client-Centric Approach</p>
-                                    {{-- <a href="{{ route('project.publik') }}" class="btn btn-primary py-3 px-5 mt-3">Read More</a> --}}
                                 </div>
                             </div>
                         </div>
