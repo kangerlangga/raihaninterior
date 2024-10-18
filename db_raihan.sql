@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 16, 2024 at 02:52 PM
+-- Generation Time: Oct 18, 2024 at 04:17 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.3.12
 
@@ -43,6 +43,26 @@ CREATE TABLE `cache_locks` (
   `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `owner` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `expiration` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id_comments` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `author_comments` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `job_comments` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content_comments` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_comments` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone_comments` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `visib_comments` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_by` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `modified_by` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -92,7 +112,9 @@ CREATE TABLE `migrations` (
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '0001_01_01_000000_create_users_table', 1),
 (2, '0001_01_01_000001_create_cache_table', 1),
-(3, '2024_10_15_200819_create_home_sliders_table', 2);
+(3, '2024_10_15_200819_create_home_sliders_table', 2),
+(4, '2024_10_18_202507_create_comments_table', 3),
+(5, '2024_10_18_202527_create_projects_table', 3);
 
 -- --------------------------------------------------------
 
@@ -104,6 +126,27 @@ CREATE TABLE `password_reset_tokens` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `projects`
+--
+
+CREATE TABLE `projects` (
+  `id_projects` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name_projects` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title_projects` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `desc_projects` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `poin_a_projects` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `poin_b_projects` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `poin_c_projects` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image_projects` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_by` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `modified_by` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -126,9 +169,9 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('U796zCICnemNHg7aQ4Ynez8nkUD4LCGKTshKbwH8', NULL, '192.168.17.200', 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Mobile Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNE5jcWlGTGVEZzMxNXRBU2lrZ1pPYldLaVdDQko5ek5qUmUyWHB6SCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTE6Imh0dHA6Ly8xOTIuMTY4LjE3LjIwMi9yYWloYW5pbnRlcmlvci9wdWJsaWMvcHJvamVjdCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1729008355),
-('ui9fcDgJryQTr71y20pExcChH9hoEXrlKuag4Fyi', NULL, '192.168.17.200', 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Mobile Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWEU2bjI2akJmcUtHVkg2UHhkbFVhaUNpU2tqeFFTNWE2QTJwTm9mWCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDM6Imh0dHA6Ly8xOTIuMTY4LjE3LjIwMi9yYWloYW5pbnRlcmlvci9wdWJsaWMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1729007053),
-('YOnmUOH2fkSd47Pf7xTjJWv4gO6knRgIh14gM7JN', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZ0tQbXFSMWdGUm9ueTUyY0EzMUdsQkpkWkNQYmpibzA5aDFwSGpaMSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly9yYWloYW5pbnRlcmlvci5lcnJyIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1729008275);
+('g90jOd0l4twYcrGvMNJqp6ndel5adl3Cisp4E4ti', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUGpUMU9RU2dhT3dpeVhZU3QwSENYUG81UkU3Uk12S3BLS1cxN2pQcyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly9yYWloYW5pbnRlcmlvci5lcnJyIjt9fQ==', 1729262778),
+('N9F4URtZ7JpqYTgmervIz2AIEfbMcs4i2rT1xdio', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTTcwMWEwbmFxbHV3OUlIc3F5dVhlN0lCdFhLc3lGYzcwbzlvUEV5eSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzg6Imh0dHA6Ly9yYWloYW5pbnRlcmlvci5lcnJyL2xvZ2luLWFkbWluIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1729263985),
+('sh7iOUxdCE0YMobP1ccbonnzQOgoUo21hboMOw1O', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiZU9NVGVDNTBxMUJteFhmUFBWaE1vZ3ZuNjJwSDJ5d0JCdUZlcVVuOSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly9yYWloYW5pbnRlcmlvci5lcnJyL2NvbnRhY3QiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YToxOntzOjg6ImludGVuZGVkIjtzOjMyOiJodHRwOi8vcmFpaGFuaW50ZXJpb3IuZXJyci9hZG1pbiI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1729268198);
 
 -- --------------------------------------------------------
 
@@ -155,6 +198,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `id_akun`, `name`, `email`, `email_verified_at`, `password`, `jabatan`, `level`, `telp`, `alamat`, `created_by`, `modified_by`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'AkunippjuCFBh29SuZPuScCrOZ0p1zihUH7Vx', 'Admin Raihan Interior', 'superadmin@raihaninterior.com', NULL, '$2y$12$ufvP3E.akVKcqKm9qknxeOmGbrMEtfwS5hl2d5RufuYqQewllV0x2', 'Administrator', 'Super Admin', '082139117365', 'Sidoarjo', 'superadmin@raihaninterior.com', 'superadmin@raihaninterior.com', NULL, '2024-10-18 15:24:45', '2024-10-18 15:36:02');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -169,6 +219,12 @@ ALTER TABLE `cache`
 --
 ALTER TABLE `cache_locks`
   ADD PRIMARY KEY (`key`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id_comments`);
 
 --
 -- Indexes for table `home_sliders`
@@ -187,6 +243,12 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
+
+--
+-- Indexes for table `projects`
+--
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`id_projects`);
 
 --
 -- Indexes for table `sessions`
@@ -212,13 +274,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
