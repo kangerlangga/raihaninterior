@@ -43,7 +43,7 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/Project/1.jpg" style="object-fit: cover;" alt="">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/Project/1.JPG" style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -59,7 +59,7 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/Project/4.jpg" style="object-fit: cover;" alt="">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/Project/4.JPG" style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -75,7 +75,7 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/Project/3.jpg" style="object-fit: cover;" alt="">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/Project/3.JPG" style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -91,7 +91,7 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/Project/2.jpg" style="object-fit: cover;" alt="">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ url('') }}/assets/public/img/Project/2.JPG" style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
