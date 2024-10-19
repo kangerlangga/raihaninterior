@@ -41,7 +41,7 @@
                             @endif
                                 <div class="profile-picture">
                                     <div class="avatar avatar-xl">
-                                        <img src="{{  url('') }}/assets/admin/img/cust3.png" alt="..." class="avatar-img">
+                                        <img src="{{  url('') }}/assets/admin/img/customer.png" alt="..." class="avatar-img">
                                     </div>
                                 </div>
                             </div>
