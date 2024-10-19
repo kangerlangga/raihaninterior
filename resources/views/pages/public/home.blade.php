@@ -204,6 +204,7 @@
     </div>
     <!-- Feature End -->
 
+    <?php if ($cC > 0) : ?>
     <!-- Testimonial Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -212,25 +213,18 @@
                 <h1 class="display-5 mb-4">Delivering Quality and Satisfaction in Every Project</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='{{ url('') }}/assets/public/img/testimonial-1.jpg' alt=''>">
-                    <p class="fs-5">"Their interior design transformed our space into a stunning and functional home. The attention to detail and the ability to capture our vision was truly impressive. We're beyond satisfied!"</p>
-                    <h3>Alice Turner</h3>
-                    <span class="text-primary">Homeowner</span>
+                @foreach ($Comment as $C)
+                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='{{ url('') }}/assets/public/img/testi.jpg' alt=''>">
+                    <p class="fs-5">"{{ $C->content_comments }}"</p>
+                    <h3>{{ $C->author_comments }}</h3>
+                    <span class="text-primary">{{ $C->job_comments }}</span>
                 </div>
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='{{ url('') }}/assets/public/img/testimonial-2.jpg' alt=''>">
-                    <p class="fs-5">"The custom furniture they created for our office is exceptional. Every piece fits perfectly, and the quality is outstanding. Their service was professional and timely. Highly recommend!"</p>
-                    <h3>Michael Scott</h3>
-                    <span class="text-primary">Office Manager</span>
-                </div>
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='{{ url('') }}/assets/public/img/testimonial-3.jpg' alt=''>">
-                    <p class="fs-5">"From start to finish, the team delivered excellence. Our renovation was completed on time, and the results were beyond our expectations. The craftsmanship and service were top-notch!"</p>
-                    <h3>Sarah Lee</h3>
-                    <span class="text-primary">Property Developer</span>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
     <!-- Testimonial End -->
+    <?php endif;?>
 
     @include('layouts.public.footer')
     @include('layouts.public.script')

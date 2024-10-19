@@ -54,36 +54,37 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <p class="mb-4">We're here to assist you! If you have any questions or inquiries, please fill out the contact form below. Our team is dedicated to responding promptly to ensure you receive the support you need.</p>
-                    <form>
+                    <form method="POST" action="{{ route('contact.send') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                                    <input type="text" class="form-control" id="Name" name="Name" placeholder="Your Name" required>
+                                    <label for="Name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone">
-                                    <label for="phone">Your Phone</label>
+                                    <input type="tel" class="form-control" id="Phone" name="Phone" placeholder="Your Phone" required>
+                                    <label for="Phone">Your Phone</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <input type="email" class="form-control" id="Email" name="Email" placeholder="Your Email" required>
+                                    <label for="Email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
+                                    <input type="text" class="form-control" id="Subject" name="Subject" placeholder="Subject" required>
+                                    <label for="Subject">Subject</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 100px"></textarea>
-                                    <label for="message">Message</label>
+                                    <textarea class="form-control" placeholder="Leave a message here" id="Message" name="Message" style="height: 100px" required></textarea>
+                                    <label for="Message">Message</label>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -107,6 +108,23 @@
 
     @include('layouts.public.footer')
     @include('layouts.public.script')
+    <script>
+        @if(session('success'))
+        Swal.fire({
+            icon: "success",
+            title: "{{ session('success') }}",
+            showConfirmButton: false,
+            timer: 3000
+        });
+        @elseif(session('error'))
+        Swal.fire({
+            icon: "error",
+            title: "{{ session('error') }}",
+            showConfirmButton: false,
+            timer: 3000
+        });
+        @endif
+    </script>
 @endsection
 
 <body>

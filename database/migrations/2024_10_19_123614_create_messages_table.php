@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('phone_messages');
             $table->string('subject_messages');
             $table->text('content_messages');
+            $table->string('status_messages');
             $table->string('created_by');
             $table->string('modified_by');
             $table->timestamps();

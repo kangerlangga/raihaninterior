@@ -74,7 +74,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <p>{{ $H->desc_home_sliders }}</b></p>
+                                                <p>{{ $H->desc_home_sliders }}</p>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

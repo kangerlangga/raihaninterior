@@ -36,7 +36,7 @@
                                     <div class="col-sm-6">
                                         <div class="form-group @error('Nama') has-error has-feedback @enderror">
                                             <label for="Nama">Name</label>
-                                            <input type="text" id="Nama" name="Nama" value="{{ old('Nama', $EditUser->nama) }}" class="form-control" required>
+                                            <input type="text" id="Nama" name="Nama" value="{{ old('Nama', $EditUser->name) }}" class="form-control" required>
                                             @error('Nama')
                                             <small id="Nama" class="form-text text-muted">{{ $message }}</small>
                                             @enderror

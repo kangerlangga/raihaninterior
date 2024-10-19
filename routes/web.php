@@ -18,6 +18,7 @@ Route::get('/', [PublikController::class, 'home'])->name('home.publik');
 Route::get('/about', [PublikController::class, 'about'])->name('about.publik');
 Route::get('/project', [PublikController::class, 'project'])->name('project.publik');
 Route::get('/contact', [PublikController::class, 'contact'])->name('contact.publik');
+Route::post('/contact/send', [MessageController::class, 'store'])->name('contact.send');
 
 // Rute Admin
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -42,9 +43,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/admin/project/delete/{id}', [ProjectController::class, 'destroy'])->name('project.delete');
 
     Route::get('/admin/message', [MessageController::class, 'index'])->name('message.data');
-    Route::get('/admin/message/add', [MessageController::class, 'create'])->name('message.add');
-    Route::post('/admin/message/store', [MessageController::class, 'store'])->name('message.store');
-    Route::get('/admin/message/edit/{id}', [MessageController::class, 'edit'])->name('message.edit');
+    Route::get('/admin/message/detail/{id}', [MessageController::class, 'show'])->name('message.detail');
     Route::post('/admin/message/update/{id}', [MessageController::class, 'update'])->name('message.update');
     Route::get('/admin/message/delete/{id}', [MessageController::class, 'destroy'])->name('message.delete');
 

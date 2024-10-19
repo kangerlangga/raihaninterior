@@ -35,5 +35,5 @@ class Message extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_messages','name_messages','email_messages','phone_messages','subject_messages','content_messages','created_by','modified_by'];
+    protected $fillable = ['id_messages','name_messages','email_messages','phone_messages','subject_messages','content_messages','status_messages','created_by','modified_by'];
 }

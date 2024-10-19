@@ -30,7 +30,7 @@
                 <div class="page-header">
                     <h4 class="page-title">{{ $judul }}</h4>
                     <ul class="breadcrumbs">
-                        <a href="{{ route('comment.add') }}" class="btn btn-round text-white ml-auto fw-bold" style="background-color: #35A5B1">
+                        <a href="{{ route('comment.add') }}" class="btn btn-round text-white ml-auto fw-bold" style="background-color: #B78D65">
                             <i class="fa fa-plus-circle mr-1"></i>
                             New Comments
                         </a>
@@ -39,10 +39,10 @@
                 <div class="row">
                     @foreach ($DataC as $C)
                     <div class="col-md-4">
-                        <div class="card card-info card-annoucement card-round">
+                        <div class="card card-annoucement card-round" style="background-color: #B78D65">
                             <div class="card-body text-center">
-                                <div class="card-opening">{{ $C->author_comments }}</div>
-                                <div class="card-desc">
+                                <div class="card-opening text-white">{{ $C->author_comments }}</div>
+                                <div class="card-desc text-white">
                                     {!! Str::limit(strip_tags($C->content_comments, '<b><i><u><strong><em>'), 135, '...') !!}
                                 </div>
                                 <div class="card-detail">
@@ -65,14 +65,14 @@
                                         <!-- Modal -->
                                         <div class="modal fade" id="{{ $C->id_comments }}" tabindex="-1" role="dialog" aria-labelledby="{{ $C->id_comments }}Label" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
-                                                <div class="modal-content" style="color: black">
+                                                <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="{{ $C->id_comments }}Label"><b>Activity History</b></h5>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-                                                    <div class="modal-body" style="text-align: left;">
+                                                    <div class="modal-body" style="text-align: start">
                                                         <p>Created : <br>{{ $C->created_by }} <b>({{ $C->created_at }})</b></p>
                                                         <p>Last Modified : <br>{{ $C->modified_by }} <b>({{ $C->updated_at }})</b></p>
                                                     </div>

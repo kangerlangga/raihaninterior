@@ -23,7 +23,8 @@ class AdminController extends Controller
             'cH' => HomeSlider::count(),
             'cP' => Project::count(),
             'cC' => Comment::count(),
-            'cMC' => Message::count(),
+            'cM' => Message::count(),
+            'cMC' => Message::where('status_messages', 'Unread')->count(),
             'cVO' => DB::table('sessions')->where('last_activity', '>=', $fiveMinutesAgo)->count(),
         ];
         return view('pages.admin.dashboard', $data);
@@ -33,7 +34,7 @@ class AdminController extends Controller
     {
         $data = [
             'judul' => 'Edit Profile',
-            'cMC' => Message::count(),
+            'cMC' => Message::where('status_messages', 'Unread')->count(),
         ];
         return view('pages.admin.profile_edit', $data);
     }
@@ -74,7 +75,7 @@ class AdminController extends Controller
     {
         $data = [
             'judul' => 'Change Password',
-            'cMC' => Message::count(),
+            'cMC' => Message::where('status_messages', 'Unread')->count(),
         ];
         return view('pages.admin.profile_editpass', $data);
     }

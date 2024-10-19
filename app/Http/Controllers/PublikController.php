@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\HomeSlider;
 use Illuminate\Http\Request;
 
@@ -14,6 +15,8 @@ class PublikController extends Controller
             'judul' => 'Home',
             'cHS' => HomeSlider::where('visib_home_sliders', 'Showing')->count(),
             'HomeSlider' => HomeSlider::where('visib_home_sliders', 'Showing')->get(),
+            'cC' => Comment::where('visib_comments', 'Showing')->count(),
+            'Comment' => Comment::where('visib_comments', 'Showing')->latest()->limit(3)->get(),
         ]);
     }
 

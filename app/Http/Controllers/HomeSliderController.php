@@ -20,7 +20,7 @@ class HomeSliderController extends Controller
         $data = [
             'judul' => 'Home Sliders',
             'DataHS' => HomeSlider::latest()->get(),
-            'cMC' => Message::count(),
+            'cMC' => Message::where('status_messages', 'Unread')->count(),
         ];
         return view('pages.admin.home', $data);
     }
@@ -32,7 +32,7 @@ class HomeSliderController extends Controller
     {
         $data = [
             'judul' => 'New Home Slider',
-            'cMC' => Message::count(),
+            'cMC' => Message::where('status_messages', 'Unread')->count(),
         ];
         return view('pages.admin.home_add', $data);
     }
@@ -85,7 +85,7 @@ class HomeSliderController extends Controller
         $data = [
             'judul' => 'Edit Home Slider',
             'EditHomeS' => HomeSlider::findOrFail($id),
-            'cMC' => Message::count(),
+            'cMC' => Message::where('status_messages', 'Unread')->count(),
         ];
         return view('pages.admin.home_edit', $data);
     }

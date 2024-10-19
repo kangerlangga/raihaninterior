@@ -33,12 +33,21 @@
                             <form method="POST" action="{{ route('comment.update', $EditComment->id_comments) }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-6">
                                         <div class="form-group @error('Author') has-error has-feedback @enderror">
                                             <label for="Author">Author Name</label>
                                             <input type="text" id="Author" name="Author" value="{{ old('Author', $EditComment->author_comments) }}" class="form-control" required>
                                             @error('Author')
                                             <small id="Author" class="form-text text-muted">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group @error('Job') has-error has-feedback @enderror">
+                                            <label for="Job">Position or Job</label>
+                                            <input type="text" id="Job" name="Job" value="{{ old('Job', $EditComment->job_comments) }}" class="form-control" required>
+                                            @error('Job')
+                                            <small id="Job" class="form-text text-muted">{{ $message }}</small>
                                             @enderror
                                         </div>
                                     </div>
@@ -63,9 +72,7 @@
                                     <div class="col-sm-12">
                                         <div class="form-group @error('Comment') has-error has-feedback @enderror">
                                             <label for="Comment">Comment</label>
-                                            <textarea class="form-control" id="Comment" name="Comment">
-                                                {{ old('Comment', $EditComment->content_comments) }}
-                                            </textarea>
+                                            <input type="text" id="Comment" name="Comment" value="{{ old('Comment', $EditComment->content_comments) }}" class="form-control" required>
                                             @error('Comment')
                                             <small id="Comment" class="form-text text-muted">{{ $message }}</small>
                                             @enderror
@@ -123,48 +130,6 @@
             }
         });
     });
-</script>
-<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.css">
-<script type="importmap">
-    {
-        "imports": {
-            "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.js",
-            "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/43.0.0/"
-        }
-    }
-</script>
-<script type="module">
-    import {
-        ClassicEditor,
-        Essentials,
-        Paragraph,
-        Bold,
-        Italic,
-        Font
-    } from 'ckeditor5';
-    ClassicEditor
-        .create( document.querySelector( '#Comment' ), {
-            plugins: [
-                Essentials, Paragraph, Bold, Italic, Font
-            ],
-            toolbar: [
-                'undo', 'redo', '|', 'bold', 'italic', '|',
-                'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
-            ]
-        } )
-        .then( editor => {
-            window.editor = editor;
-        } )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>
-<script>
-    window.onload = function() {
-        if ( window.location.protocol === 'file:' ) {
-            alert( 'This sample requires an HTTP server. Please serve this file with a web server.' );
-        }
-    };
 </script>
 @endsection
 
