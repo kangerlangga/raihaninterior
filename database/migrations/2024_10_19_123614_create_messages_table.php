@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comments', function (Blueprint $table) {
-            $table->string('id_comments')->primary();
-            $table->string('author_comments');
-            $table->string('job_comments');
-            $table->text('content_comments');
-            $table->string('email_comments');
-            $table->string('phone_comments');
-            $table->string('visib_comments');
+        Schema::create('messages', function (Blueprint $table) {
+            $table->string('id_messages')->primary();
+            $table->string('name_messages');
+            $table->string('email_messages');
+            $table->string('phone_messages');
+            $table->string('subject_messages');
+            $table->text('content_messages');
             $table->string('created_by');
             $table->string('modified_by');
             $table->timestamps();
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('messages');
     }
 };

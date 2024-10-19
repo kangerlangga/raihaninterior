@@ -30,7 +30,7 @@
                 <div class="page-header">
                     <h4 class="page-title">{{ $judul }}</h4>
                     <ul class="breadcrumbs">
-                        <a href="{{ route('home.add') }}" class="btn btn-round text-white ml-auto fw-bold" style="background-color: #35A5B1">
+                        <a href="{{ route('home.add') }}" class="btn btn-round text-white ml-auto fw-bold" style="background-color: #B78D65">
                             <i class="fa fa-plus-circle mr-1"></i>
                             New Home Sliders
                         </a>
@@ -40,11 +40,11 @@
                     @foreach ($DataHS as $H)
                     <div class="col-md-4">
                         <div class="card card-post card-round">
-                            <img class="card-img-top" src="{{ url('') }}/assets1/img/HomeSlider/{{ $H->image_home_sliders }}" alt="...">
+                            <img class="card-img-top" src="{{ url('') }}/assets/public/img/HomeSlider/{{ $H->image_home_sliders }}" alt="...">
                             <div class="card-body">
                                 <div class="d-flex">
                                     <div class="info-post ml-2">
-                                        <p class="username">{{ $H->author_home_sliders }}</p>
+                                        <p class="username">{{ $H->title_home_sliders }}</p>
                                         <p class="date text-muted">{{ $H->created_at->format('F d, Y') }}</p>
                                     </div>
                                 </div>
@@ -59,6 +59,29 @@
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </a>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-icon btn-round btn-primary" data-toggle="modal" data-target="#{{ $H->id_home_sliders }}D">
+                                    <i class="fas fa-info"></i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="{{ $H->id_home_sliders }}D" tabindex="-1" role="dialog" aria-labelledby="{{ $H->id_home_sliders }}DLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="{{ $H->id_home_sliders }}DLabel"><b>Description</b></h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>{{ $H->desc_home_sliders }}</b></p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 @if (Auth::user()->level == 'Super Admin')
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-icon btn-round btn-success" data-toggle="modal" data-target="#{{ $H->id_home_sliders }}">

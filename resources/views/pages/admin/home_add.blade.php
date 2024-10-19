@@ -54,18 +54,30 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
+                                        <div class="form-group @error('Title') has-error has-feedback @enderror">
+                                            <label for="Title">Title</label>
+                                            <input type="text" id="Title" name="Title" value="{{ old('Title') }}" class="form-control" required>
+                                            @error('Title')
+                                            <small id="Title" class="form-text text-muted">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group @error('Desc') has-error has-feedback @enderror">
+                                            <label for="Desc">Description</label>
+                                            <input type="text" id="Desc" name="Desc" value="{{ old('Desc') }}" class="form-control" required>
+                                            @error('Desc')
+                                            <small id="Desc" class="form-text text-muted">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="visibility">Visibility</label>
                                             <select class="form-control" id="visibility" name="visibility">
                                                 <option name='visibility' value='Showing'>Showing (Publish)</option>
                                                 <option name='visibility' value='Hiding'>Hiding (Unpublish)</option>
                                             </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="Author">Author (Your Profile Name)</label>
-                                            <input class="form-control" name="Author" value="{{ Auth::user()->nama }}" id="Author" readonly style="cursor: not-allowed">
                                         </div>
                                     </div>
                                     <div class="col-sm-12 mt-1">

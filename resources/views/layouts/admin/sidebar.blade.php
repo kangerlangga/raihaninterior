@@ -61,8 +61,8 @@
                         <p>Projects</p>
                     </a>
                 </li>
-                <li class="nav-item {{ Request::is('admin/comment*') ? 'active' : '' }}">
-                    <a href="{{ route('comment.data') }}">
+                <li class="nav-item {{ Request::is('admin/message*') ? 'active' : '' }}">
+                    <a href="{{ route('message.data') }}">
                         <i class="fas fa-envelope"></i>
                         <p>Customers</p>
                         <?php if ($cMC > 0) : ?>

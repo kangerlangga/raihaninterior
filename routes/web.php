@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeSliderController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PublikController;
@@ -39,6 +40,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/admin/project/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
     Route::post('/admin/project/update/{id}', [ProjectController::class, 'update'])->name('project.update');
     Route::get('/admin/project/delete/{id}', [ProjectController::class, 'destroy'])->name('project.delete');
+
+    Route::get('/admin/message', [MessageController::class, 'index'])->name('message.data');
+    Route::get('/admin/message/add', [MessageController::class, 'create'])->name('message.add');
+    Route::post('/admin/message/store', [MessageController::class, 'store'])->name('message.store');
+    Route::get('/admin/message/edit/{id}', [MessageController::class, 'edit'])->name('message.edit');
+    Route::post('/admin/message/update/{id}', [MessageController::class, 'update'])->name('message.update');
+    Route::get('/admin/message/delete/{id}', [MessageController::class, 'destroy'])->name('message.delete');
 
     Route::get('/admin/comment', [CommentController::class, 'index'])->name('comment.data');
     Route::get('/admin/comment/add', [CommentController::class, 'create'])->name('comment.add');
