@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 18, 2024 at 04:17 PM
+-- Generation Time: Oct 19, 2024 at 03:51 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.3.12
 
@@ -55,7 +55,7 @@ CREATE TABLE `comments` (
   `id_comments` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `author_comments` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `job_comments` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `content_comments` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content_comments` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_comments` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone_comments` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `visib_comments` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -64,6 +64,15 @@ CREATE TABLE `comments` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id_comments`, `author_comments`, `job_comments`, `content_comments`, `email_comments`, `phone_comments`, `visib_comments`, `created_by`, `modified_by`, `created_at`, `updated_at`) VALUES
+('CommentHYNDN4PwyZi7rQyveefWGEu6H7XY45XRD', 'Dimas Saputra', 'Real Estate Developer', 'From start to finish, the team delivered excellence. Our renovation was completed on time, and the results were beyond our expectations. The craftsmanship and service were top-notch!', 'sales@raihaninterior.com', '082228220233', 'Showing', 'superadmin@raihaninterior.com', 'superadmin@raihaninterior.com', '2024-10-19 10:23:38', '2024-10-19 11:01:41'),
+('CommenttCCrwBmE5nsgxyK2AcKz4gSHhpsAKjfcm', 'Arya Wijaya', 'Business Owner', 'Their interior design transformed our space into a stunning and functional home. The attention to detail and the ability to capture our vision was truly impressive. We\'re beyond satisfied!', 'sales@raihaninterior.com', '082228220233', 'Showing', 'superadmin@raihaninterior.com', 'superadmin@raihaninterior.com', '2024-10-19 10:26:59', '2024-10-19 11:02:18'),
+('CommentZ6eNaRmJEv3pqqWusG8xWP0nUcnkh0nhA', 'Reza Mahendra', 'Entrepreneur', 'The custom furniture they created for our office is exceptional. Every piece fits perfectly, and the quality is outstanding. Their service was professional and timely. Highly recommend!', 'sales@raihaninterior.com', '082228220233', 'Showing', 'superadmin@raihaninterior.com', 'superadmin@raihaninterior.com', '2024-10-19 10:24:38', '2024-10-19 11:02:03');
 
 -- --------------------------------------------------------
 
@@ -96,6 +105,26 @@ INSERT INTO `home_sliders` (`id_home_sliders`, `image_home_sliders`, `title_home
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id_messages` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name_messages` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_messages` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone_messages` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subject_messages` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content_messages` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_messages` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_by` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `modified_by` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -113,8 +142,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '0001_01_01_000000_create_users_table', 1),
 (2, '0001_01_01_000001_create_cache_table', 1),
 (3, '2024_10_15_200819_create_home_sliders_table', 2),
-(4, '2024_10_18_202507_create_comments_table', 3),
-(5, '2024_10_18_202527_create_projects_table', 3);
+(5, '2024_10_18_202527_create_projects_table', 3),
+(6, '2024_10_18_202507_create_comments_table', 4),
+(8, '2024_10_19_123614_create_messages_table', 5);
 
 -- --------------------------------------------------------
 
@@ -169,9 +199,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('g90jOd0l4twYcrGvMNJqp6ndel5adl3Cisp4E4ti', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUGpUMU9RU2dhT3dpeVhZU3QwSENYUG81UkU3Uk12S3BLS1cxN2pQcyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly9yYWloYW5pbnRlcmlvci5lcnJyIjt9fQ==', 1729262778),
-('N9F4URtZ7JpqYTgmervIz2AIEfbMcs4i2rT1xdio', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTTcwMWEwbmFxbHV3OUlIc3F5dVhlN0lCdFhLc3lGYzcwbzlvUEV5eSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzg6Imh0dHA6Ly9yYWloYW5pbnRlcmlvci5lcnJyL2xvZ2luLWFkbWluIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1729263985),
-('sh7iOUxdCE0YMobP1ccbonnzQOgoUo21hboMOw1O', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiZU9NVGVDNTBxMUJteFhmUFBWaE1vZ3ZuNjJwSDJ5d0JCdUZlcVVuOSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly9yYWloYW5pbnRlcmlvci5lcnJyL2NvbnRhY3QiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YToxOntzOjg6ImludGVuZGVkIjtzOjMyOiJodHRwOi8vcmFpaGFuaW50ZXJpb3IuZXJyci9hZG1pbiI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1729268198);
+('vDjdp8jxXXQen0bedgfg4ZS9RAdCaBjH9yVDDB90', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiNjk3Q2I4QkRJNzJSTGdxREhmVXdGUndOamtvdUNvVnIxV2ZSZlZUUCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9yYWloYW5pbnRlcmlvci5lcnJyL2FkbWluIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1729353061);
 
 -- --------------------------------------------------------
 
@@ -202,7 +230,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `id_akun`, `name`, `email`, `email_verified_at`, `password`, `jabatan`, `level`, `telp`, `alamat`, `created_by`, `modified_by`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'AkunippjuCFBh29SuZPuScCrOZ0p1zihUH7Vx', 'Admin Raihan Interior', 'superadmin@raihaninterior.com', NULL, '$2y$12$ufvP3E.akVKcqKm9qknxeOmGbrMEtfwS5hl2d5RufuYqQewllV0x2', 'Administrator', 'Super Admin', '082139117365', 'Sidoarjo', 'superadmin@raihaninterior.com', 'superadmin@raihaninterior.com', NULL, '2024-10-18 15:24:45', '2024-10-18 15:36:02');
+(1, 'AkunippjuCFBh29SuZPuScCrOZ0p1zihUH7Vx', 'Admin Raihan Interior', 'superadmin@raihaninterior.com', NULL, '$2y$12$VsFwS6aiCnwi4nw6T5UiO.zCoGI22ub6mFp/eCAcIixHcsByj1m4O', 'Administrator', 'Super Admin', '082139117365', 'Sidoarjo', 'superadmin@raihaninterior.com', 'superadmin@raihaninterior.com', NULL, '2024-10-18 15:24:45', '2024-10-19 06:09:35'),
+(2, 'AkunIUMH77DJOZBi0aQSof6hjjmJLfwSKmjRV', 'Admin Ayunhe Scarves', 'admin@raihaninterior.com', NULL, '$2y$12$ayGGq7pSYYN/ic8/rjjeq.YjnRfdBAMEz612kVp9/yS2URkV3ehS6', 'Admin', 'Admin', '082228220233', 'Sidoarjo', 'superadmin@raihaninterior.com', 'superadmin@raihaninterior.com', NULL, '2024-10-19 07:54:50', '2024-10-19 07:55:29');
 
 --
 -- Indexes for dumped tables
@@ -231,6 +260,12 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `home_sliders`
   ADD PRIMARY KEY (`id_home_sliders`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id_messages`);
 
 --
 -- Indexes for table `migrations`
@@ -274,13 +309,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
