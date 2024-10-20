@@ -44,15 +44,15 @@ class HomeSliderController extends Controller
     {
         // validate form
         $request->validate([
-            'ImageS'    => 'required|image|mimes:jpeg,jpg,png|max:3072',
+            'Images'    => 'required|image|mimes:jpeg,jpg,png|max:3072',
             'Title'     => 'required|max:255',
             'Desc'      => 'required|max:255',
         ]);
 
         //upload image
-        $imageS = $request->file('ImageS');
-        $imageName = time().Str::random(17).'.'.$imageS->getClientOriginalExtension();
-        $imageS->move('assets/public/img/HomeSlider', $imageName);
+        $Images = $request->file('Images');
+        $imageName = time().Str::random(17).'.'.$Images->getClientOriginalExtension();
+        $Images->move('assets/public/img/HomeSlider', $imageName);
 
         //create
         HomeSlider::create([
@@ -96,7 +96,7 @@ class HomeSliderController extends Controller
     public function update(Request $request, string $id): RedirectResponse
     {
         $request->validate([
-            'ImageS'    => 'image|mimes:jpeg,jpg,png|max:3072',
+            'Images'    => 'image|mimes:jpeg,jpg,png|max:3072',
             'Title'     => 'required|max:255',
             'Desc'      => 'required|max:255',
         ]);
@@ -105,13 +105,13 @@ class HomeSliderController extends Controller
         $homes = HomeSlider::findOrFail($id);
 
         //cek gambar di upload
-        if ($request->hasFile('ImageS')) {
+        if ($request->hasFile('Images')) {
             $homes_path = 'assets/public/img/HomeSlider/' . $homes->image_home_sliders;
             if (file_exists($homes_path)) {
                 unlink($homes_path);
             }
             //upload image
-            $imghomes = $request->file('ImageS');
+            $imghomes = $request->file('Images');
             $imghomesName = time().Str::random(17).'.'.$imghomes->getClientOriginalExtension();
             $imghomes->move('assets/public/img/HomeSlider', $imghomesName);
 

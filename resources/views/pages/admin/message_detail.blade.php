@@ -60,7 +60,7 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label class="control-label">Message</label>
-                                            <p class="form-control-static">{{ $DetailM->content_messages }}</p>
+                                            <p class="form-control-static">{!! nl2br(e($DetailM->content_messages)) !!}</p>
                                         </div>
                                     </div>
 

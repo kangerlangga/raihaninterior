@@ -6,33 +6,6 @@
 
 @section('content')
 <style>
-.card-img-container {
-    position: relative;
-}
-
-.card-img-container .img-1 {
-    transition: opacity 0.5s ease-in-out; /* Transisi untuk menghilangkan gambar pertama */
-}
-
-.card-img-container .img-2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0; /* Mulai gambar kedua dengan opacity 0 */
-    transition: opacity 0.5s ease-in-out; /* Transisi untuk menampilkan gambar kedua */
-    z-index: 1; /* Pastikan gambar kedua berada di atas */
-}
-
-.card-img-container:hover .img-2 {
-    opacity: 1; /* Saat di-hover, gambar kedua muncul */
-}
-
-.card-img-container:hover .img-1 {
-    opacity: 0; /* Saat di-hover, gambar pertama hilang */
-}
-
 @media (max-width: 768px) {
     .page-header {
         display: flex;
@@ -57,53 +30,78 @@
                 <div class="page-header">
                     <h4 class="page-title">{{ $judul }}</h4>
                     <ul class="breadcrumbs">
-                        <a href="{{ route('product.add') }}" class="btn btn-round text-white ml-auto fw-bold" style="background-color: #35A5B1">
+                        <a href="{{ route('project.add') }}" class="btn btn-round text-white ml-auto fw-bold" style="background-color: #B78D65">
                             <i class="fa fa-plus-circle mr-1"></i>
-                            New Products
+                            New Projects
                         </a>
                     </ul>
                 </div>
                 <div class="row">
+                    <?php $no = 1; ?>
                     @foreach ($DataP as $P)
                     <div class="col-md-3">
                         <div class="card card-post card-round">
-                            <div class="card-img-container position-relative">
-                                <img class="card-img-top img-1" src="{{ url('') }}/assets1/img/Product/{{ $P->image_p_products }}" alt="{{ $P->name_products }}">
-                                <img class="card-img-top img-2 position-absolute top-0 start-0 w-100 h-100" src="{{ url('') }}/assets1/img/Product/{{ $P->image_s_products }}" alt="{{ $P->name_products }}">
-                            </div>
+                            <img class="card-img-top" src="{{ url('') }}/assets/public/img/Project/{{ $P->image_projects }}" alt="...">
                             <div class="card-body">
                                 <div class="d-flex">
                                     <div class="info-post ml-2">
-                                        <p class="username">
-                                            {{ $P->code_products }} | {{ $P->name_products }}
-                                            (<span style="color: {{ $P->stock_products == 0 ? 'red' : 'inherit' }};">{{ $P->stock_products }}</span>)
-                                        </p>
-                                        <p class="date text-muted">Rp {{ number_format($P->price_products, 0, ',', '.') }}</p>
+                                        <p class="username"><?= $no++; ?>. {{ $P->name_projects }}</p>
+                                        <p class="date text-muted">{{ $P->created_at->format('F d, Y') }}</p>
                                     </div>
                                 </div>
                                 <div class="separator-solid"></div>
-                                <a href="{{ route('product.edit', $P->id_products) }}">
+                                <a href="{{ route('project.edit', $P->id_projects) }}">
                                     <button type="button" class="btn btn-icon btn-round btn-warning">
                                         <i class="fas fa-pen"></i>
                                     </button>
                                 </a>
-                                <a href="{{ route('product.delete', $P->id_products) }}" class="but-delete">
+                                <a href="{{ route('project.delete', $P->id_projects) }}" class="but-delete">
                                     <button type="button" class="btn btn-icon btn-round btn-danger">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </a>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-icon btn-round btn-primary" data-toggle="modal" data-target="#{{ $P->id_projects }}D">
+                                    <i class="fas fa-info"></i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="{{ $P->id_projects }}D" tabindex="-1" role="dialog" aria-labelledby="{{ $P->id_projects }}DLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="{{ $P->id_projects }}DLabel"><b>Detail Project</b></h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Name Project : <br><b>{{ $P->name_projects }}</b></p>
+                                                <p>Title : <br><b>{{ $P->title_projects }}</b></p>
+                                                <p>Description : <br><b>{{ $P->desc_projects }}</b></p>
+                                                <ul>
+                                                    <li>{{ $P->poin_a_projects }}</li>
+                                                    <li>{{ $P->poin_b_projects }}</li>
+                                                    <li>{{ $P->poin_c_projects }}</li>
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 @if (Auth::user()->level == 'Super Admin')
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-icon btn-round btn-success" data-toggle="modal" data-target="#{{ $P->id_products }}">
+                                    <button type="button" class="btn btn-icon btn-round btn-success" data-toggle="modal" data-target="#{{ $P->id_projects }}">
                                         <i class="fas fa-history"></i>
                                     </button>
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="{{ $P->id_products }}" tabindex="-1" role="dialog" aria-labelledby="{{ $P->id_products }}Label" aria-hidden="true">
+                                    <div class="modal fade" id="{{ $P->id_projects }}" tabindex="-1" role="dialog" aria-labelledby="{{ $P->id_projects }}Label" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="{{ $P->id_products }}Label"><b>Activity History</b></h5>
+                                                    <h5 class="modal-title" id="{{ $P->id_projects }}Label"><b>Activity History</b></h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>

@@ -38,18 +38,18 @@
                                 @csrf
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="form-group @error('ImageS') has-error has-feedback @enderror">
-                                            <label for="ImageS">
+                                        <div class="form-group @error('Images') has-error has-feedback @enderror">
+                                            <label for="Images">
                                                 Image Sliders (PNG, JPG, JPEG)
                                                 <span class="d-sm-none"><br></span>
                                                 <span style="color: red;">Max 3 MB</span>
                                                 <span class="d-none d-sm-inline"> | </span>
                                                 <span class="d-sm-none"><br></span>
-                                                Standard Size 1600px x 900px
+                                                Standard Size 1920px x 1080px
                                             </label>
-											<input type="file" class="form-control-file" id="ImageS" name="ImageS" accept=".png, .jpg, .jpeg" required>
-                                            @error('ImageS')
-                                            <small id="ImageS" class="form-text text-muted">{{ $message }}</small>
+											<input type="file" class="form-control-file" id="Images" name="Images" accept=".png, .jpg, .jpeg" required>
+                                            @error('Images')
+                                            <small id="Images" class="form-text text-muted">{{ $message }}</small>
                                             @enderror
                                         </div>
                                     </div>

@@ -10,7 +10,7 @@
 <div class="logo-header" style="background-color: #B78D65">
 
     <a href="#" class="logo">
-        <img src="{{  url('') }}/assets/logo/logo.png" alt="navbar brand" class="navbar-brand" height="35">
+        <img src="{{  url('') }}/assets/logo/logo-nav.png" alt="navbar brand" class="navbar-brand" height="35">
     </a>
     <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon">

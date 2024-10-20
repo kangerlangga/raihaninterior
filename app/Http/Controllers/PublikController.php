@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\HomeSlider;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class PublikController extends Controller
@@ -33,6 +34,8 @@ class PublikController extends Controller
     {
         return view('pages.public.project', [
             'judul' => 'Our Project',
+            'cP' => Project::count(),
+            'Project' => Project::orderBy('created_at', 'asc')->get(),
         ]);
     }
 
