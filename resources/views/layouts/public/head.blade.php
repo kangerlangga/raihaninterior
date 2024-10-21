@@ -29,7 +29,7 @@
     <!-- WEBSITE META -->
     <title>{{ $judul }} | Raihan Interior</title>
     <meta name="keywords" content="Interior, Raihan Interior, Raihan Interior Official Website">
-    <meta name="description" content="Raihan Interior adalah perusahaan yang menyediakan solusi kreatif dalam desain dan penataan ruang.">
+    <meta name="description" content="Raihan Interior adalah perusahaan desain interior terkemuka yang menawarkan solusi kreatif dan inovatif dalam desain dan penataan ruang, serta menyediakan layanan produksi sofa, meubel, dan kontraktor rumah, dengan komitmen untuk menciptakan lingkungan yang estetis, fungsional, dan sesuai dengan kebutuhan unik setiap klien.">
     <link rel="icon" type="image/png" href="{{ asset('assets/logo/logo.png') }}">
 
     <!-- Google Web Fonts -->
