@@ -10,9 +10,9 @@ use App\Http\Controllers\PublikController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/404', function () {
-    return view('pages.error.404');
-});
+// Route::get('/404', function () {
+//     return view('pages.error.404');
+// });
 
 Route::get('/', [PublikController::class, 'home'])->name('home.publik');
 Route::get('/about', [PublikController::class, 'about'])->name('about.publik');
