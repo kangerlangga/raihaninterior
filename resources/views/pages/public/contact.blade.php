@@ -29,7 +29,8 @@
                             </div>
                             <div class="ms-4">
                                 <p class="mb-2">Address</p>
-                                <h3 class="mb-0">Sidoarjo, Jawa Timur, Indonesia</h3>
+                                <h3 class="mb-0">Workshop Raihan Interior</h3>
+                                <h3 class="mb-0">Bringin Indah 2A No.28, Bringin, Sambikerep, Surabaya, Jawa Timur.</h3>
                             </div>
                         </div>
                         <div class="bg-light d-flex align-items-center w-100 p-4 mb-4">
@@ -37,8 +38,9 @@
                                 <i class="fa fa-phone-alt text-primary"></i>
                             </div>
                             <div class="ms-4">
-                                <p class="mb-2">Call Us Now</p>
-                                <h3 class="mb-0">+62 822-2822-0233</h3>
+                                <p class="mb-2">Chat Us Now</p>
+                                <h3 class="mb-0">+62 851-0211-3711</h3>
+                                <h3 class="mb-0">+62 851-5672-7230</h3>
                             </div>
                         </div>
                         <div class="bg-light d-flex align-items-center w-100 p-4">

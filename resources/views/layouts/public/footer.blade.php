@@ -3,10 +3,8 @@
 <script type="text/javascript">
 $(function () {
     $('#myDiv').floatingWhatsApp({
-    phone: '6282228220233',
+    phone: '6285102113711',
     size: '70px',
-    // popupMessage: 'Hai, Ada yang bisa saya bantu?',
-    // showPopup: false,
     position: "right"
     });
 });
